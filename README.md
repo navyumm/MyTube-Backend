@@ -40,3 +40,15 @@ package.json me ye add karo -> "type":"module",
 
 # ab package.json me script me ye add karo
     -> "dev": "nodemon src/index.js"   
+
+-------------------
+
+# ab mujhe kuch folders bhi chahiye src ke andr 
+ -> aur aage chalkar hmare kaam aayenge production me
+
+-> controllers : yaha par hmari hogi major functionality
+-> db : database connect kaise karna hai 
+-> middlewares : code in between 
+-> modules
+-> routes : alg alg sbhi route ko manage karne ke liye 
+-> utils : utilities me hmari vo file aati hai jo functionality baar baar repeat hoti hai 
