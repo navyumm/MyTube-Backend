@@ -1,0 +1,16 @@
+{
+  "name": "project-nodejs",
+  "version": "1.0.0",
+  "description": "a project based on nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "backend"
+  ],
+  "author": "navyum",
+  "license": "ISC"
+}
