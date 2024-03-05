@@ -117,3 +117,35 @@ kaise kaise data aa sakta hai
 -> middlewares
 
 -> nodejs api error
+
+
+------------------------------------------------
+
+
+# user model & video model
+# JWT
+# Decript 
+
+ab models folder ke andr kaam karenge
+
+ab user model me jo video id aagyi vo model ko complex bna deta hai 
+uske liye mongodb querry lagegi originek package ka use karenge
+jo hai : 
+
+-> npm i mongoose-aggregate-paginate-v2
+
+
+# bcrypt  -> ye hash password ke liye hai, matlab password jab encrypt honge toh decrypt bhi honge, joki issai hote hai
+-> npm i bcrypt
+
+# Jsonwebtoken -. jwt.io
+-> npm i jsonwebtoken
+
+-----
+ab user file me inko export karo jaakr
+
+
+-----
+ab direct encrypt karna possible hai nhi, to hume help leni padhti hai mongoose ke kuch hooks ki
+middlewares me kuch hooks hai 
+-> Pre hook
