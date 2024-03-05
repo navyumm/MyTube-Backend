@@ -101,3 +101,19 @@ fir db ka naam constants file me likhna hai
  -> bd ke andr -> index.js
  -> dotenv ko require karo
 
+<!--  -->
+
+express me hum:
+ab 2 chijen install kari hai 
+
+1) cookie-parser
+2) cors -> ye hum setting karne deta hai croos origin resorce share ke liye
+----------------
+
+abhi tak bss hmari setting chal rhi hai ki
+kaise kaise data aa sakta hai
+
+
+-> middlewares
+
+-> nodejs api error
