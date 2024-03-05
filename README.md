@@ -138,7 +138,7 @@ jo hai :
 # bcrypt  -> ye hash password ke liye hai, matlab password jab encrypt honge toh decrypt bhi honge, joki issai hote hai
 -> npm i bcrypt
 
-# Jsonwebtoken -. jwt.io
+# Jsonwebtoken -> jwt.io
 -> npm i jsonwebtoken
 
 -----
@@ -149,3 +149,31 @@ ab user file me inko export karo jaakr
 ab direct encrypt karna possible hai nhi, to hume help leni padhti hai mongoose ke kuch hooks ki
 middlewares me kuch hooks hai 
 -> Pre hook
+
+<!-- ---------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------- -->
+
+# how to do file upload
+
+-> third part servicex 
+like: AWS, AZURE and many more
+
+# hum cloudinary use karenge 
+-> npm install cloudinary
+
+# multer
+-> npm i multer
+
+---> file ko direct cloudinary me store nhi karwa sakte uske liye multer ki zarurat pdegegi
+
+
+# ab multer par kuch steps hai?
+
+1) user se file leta hai -> local storage me temporary store karna
+2) local storage se cloudinary ko file dena
+
+uske baad cloudinary file ko server par daalta hai
+
+
+--
+ab hum utils me ek cloudinary naam se ek file bnate hai 

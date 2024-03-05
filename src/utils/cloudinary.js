@@ -1,11 +1,11 @@
-import {v2 as cloudinary} from "cloudinary"
+import { v2 as cloudinary } from "cloudinary"
 import fs from "fs"
 
 
-cloudinary.config({ 
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
-  api_key: process.env.CLOUDINARY_API_KEY, 
-  api_secret: process.env.CLOUDINARY_API_SECRET 
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
 const uploadOnCloudinary = async (localFilePath) => {
@@ -28,4 +28,20 @@ const uploadOnCloudinary = async (localFilePath) => {
 
 
 
-export {uploadOnCloudinary}
+export { uploadOnCloudinary }
+
+
+
+// isme files aayegi file system ke trought, means server par uploaad ho chuki hai, kaise hui nhi pta
+// lekin ye koi bhi service use karega toh local file ka path dega
+
+// local file matlab : jo bhi file mere server par jaa chuki hai
+// ab server par mere file aa gyi hai, server se mai cloudinaryy par daal dunga
+// fir server se file remove karni padegi
+
+
+// node ke sath fs milta hai -> unlink
+
+// -----------------
+
+// ab middleware bnayenge using multer
