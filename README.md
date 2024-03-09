@@ -1,5 +1,6 @@
 # steps to work on this :
 -------------------------------
+<!-- I want to take on another level -->
 
 1) package.json file banao
     -> npm init
@@ -177,3 +178,112 @@ uske baad cloudinary file ko server par daalta hai
 
 --
 ab hum utils me ek cloudinary naam se ek file bnate hai 
+
+-------------------------------------------------------------------------------------------------
+
+HHTP : 
+    -> URL -> universe resorce locator
+    -> URI -> 
+    -> URN
+
+what are HHTP headers?
+    metadata  -->  key-value    sent along with request & response
+
+    -> caching, authentication, manage state
+        X-prefix  ->  2012 (X-deprecated)      
+
+
+* Request headers  -->  from client
+* Response Headers  -->  from server
+* Representation Headers  -->  encoding/ compression
+* Payload Headers  -->  data
+
+
+
+
+# Most common Headers 
+* Accept : application/ json
+* User - Agent
+* Authorization : Beerer
+* Content - Type : images/video
+* Cookie : login vgra
+* Cache - Control : expire
+
+
+# CORS
+* Acces - Control - Allow - Origin
+* Acces - Control - Allow - Credentials
+* Acces - Control - Allow - Method
+
+
+# Security
+* Cross - Origin - Embedders - Policy
+* Cross - Origin - Opener - Policy
+* Content - Security - Policy
+* X - XSS - Protection
+
+<!-- --------------------------------------------------------------- -->
+
+
+## HHTP Methods
+
+Basic set of operations that can be used to interact with server 
+
+* <GET>      :   retrieve a resource 
+* <HEAD>     :   No message body ( Response headers only)
+* <OPTIONS>  :   what operations are available 
+* <TRACE>    :   loopback test ( get some data ) -> proxy
+* <DELETE>   :   remove a resource
+* <PUT>      :   replace a resource
+* <POST>     :   intresct with Response ( mostly add )
+* <PATCH>    :   change part of a resource
+
+
+<!-- ---------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------- -->
+
+
+## HTTP Status Code
+
+* 1 xx      Informational     ->  xx ki jagh koi bhi no. aayega like : 112
+* 2 xx      Success
+* 3 xx      Redirection
+* 4 xx      Client error
+* 5 xx      Server error
+
+------------------------------
+
+
+* 100   ->   Continue
+* 102   ->   Processing
+* 200   ->   Ok
+* 201   ->   Created
+* 202   ->   Accepted
+* 307   ->   temporary redirect 
+* 308   ->   permanent redirect
+* 400   ->   Bad request
+* 401   ->   Unauthoorized
+* 402   ->   Payment reqired
+* 404   ->   Not Found
+* 500   ->   Internal Server error
+* 504   ->   Gateway time Out
+
+<!-- ---------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------- -->
+
+
+
+
+### Ab Controllers par kaam karenge 
+
+
+
+
+
+
+
+
+
+
+
+
