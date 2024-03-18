@@ -91,7 +91,7 @@ userSchema.methods.generateRefreshToken = function(){
     )
 }
 
-export const user = mongoose.model("User", userSchema)
+export const user = mongoose.model( "User", userSchema )
 
 
 // ab hume yaha par kuch methods daalne padenge taki hum check akr paaye jo user ne passwword dala hai vo theek toh hai na
