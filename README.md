@@ -1,297 +1,78 @@
-# steps to work on this :
--------------------------------
-<!-- I want to take on another level -->
+# YouTube-Backend
+Welcome to the YouTube-Backend project! This backend server is built with JavaScript using Node.js, Express, and MongoDB to support the core functionalities of a video-sharing platform. In addition to basic user authentication (Register, Login, Logout), the backend also includes features for video management, including Video Upload, Update, and integration with Twitter.
 
-1) package.json file banao
-    -> npm init
+The backend server is also integrated with the Cloudinary API for video and image storage, and the Twitter API for posting and deleting tweets. The server also includes features for user subscriptions, comments, likes, and views.
 
-2) git me upload karenge
-    -> git init
+## Technologies
+- ***Node.js*** - JavaScript runtime environment
+- ***Express*** - Web application framework for Node.js
+- ***MongoDB*** - NoSQL database
+- ***Mongoose*** - MongoDB object modeling for Node.js
+- ***Cloudinary*** - Cloud-based image and video management
 
-____________
+## Features
+- ***User Authentication*** - Register, Login, Logout, Update Profile
 
-ab maan lo hume koi image vgra upload karni hai to use hum to usko hum tempraroly apne server par rakhte hai
-kyoki maan lo kbhi server(AWS, AZURE) ka connection fail ho to images hmari store ho
+- ***Video Management*** - Upload Video, Update Video, Get All Videos
 
-to iske liye hum ek folder bnayenge public naam server
+- ***Integrated Twitter*** - Make Tweet, Get Tweets, Delete Tweet, Update Tweet
 
--> Public -> temp ->  git status -> .gitkeep
+- ***Subscriptions*** - Subscribe to User, Unsubscribe from User, Get Subscriptions
 
-<!--  -->
+- ***Comments*** - Add Comment, Get Comments, Delete Comment
 
-.gitignore 
--> jo file hume git par upload nhi karni usai is file me daalte hai
+- ***Likes*** - Like Video, Dislike Video, Get Likes
 
-# we have git ignore generator 
+- ***Views*** - Increment View Count, Get Views
 
-<!-- -->
+## Table of Contents
 
-# .env file bnayenge :
-# ab src folder bnayenge : directories files ke liye
-# aur uske ye 3 files banao 
-    -> app.js constants.js index.js
+- **[functionality](https://)**
+    - [User Authentication](https://)
+    - [Video Management](https://)
+    - [Integrated Twitter](https://)
+    - [Subscriptions](https://)
+    - [Comments](https://)
+    - [Likes](https://)
+    - [Views](https://)
 
-____________________
+## Getting Started
+To get started with the YouTube-Backend, you will need to have Node.js and MongoDB installed on your local machine. Once you have these installed, you can clone the repository and install the necessary dependencies using the following commands:
 
+```
+git clone
+cd YouTube-Backend
+npm install
+```
 
+setup the environment variables in a `.env` file in the root directory of the project. The .env file should contain the following variables:
 
-# ab import waale tarike se kaam karne ke liye 
-package.json me ye add karo -> "type":"module",
+```
+PORT=8000
+MONGO_URI=
+CORS_ORIGIN=*
+ACCESS_TOKEN_SECRET=
+ACCESS_TOKEN_EXPIRY=1d
+REFRESH_TOKEN_SECRET=
+REFRESH_TOKEN_EXPIRY=10d
 
-# ab nodemon install karo 
-    -> npm i -D nodemon
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+```
 
-# ab package.json me script me ye add karo
-    -> "dev": "nodemon src/index.js"   
+After installing the dependencies, you can start the server using the following command:
 
--------------------
+```
+npm start
+```
 
-# ab mujhe kuch folders bhi chahiye src ke andr 
- -> aur aage chalkar hmare kaam aayenge production me
+The server will start on port 8000 by default, and you can access the API at `http://localhost:8080`.
 
--> controllers : yaha par hmari hogi major functionality
--> db : database connect kaise karna hai 
--> middlewares : code in between 
--> modules
--> routes : alg alg sbhi route ko manage karne ke liye 
--> utils : utilities me hmari vo file aati hai jo functionality baar baar repeat hoti hai 
+## API Testing in Postman
+You can test the API endpoints using Postman. The collection for the YouTube-Backend API is available [here]().
 
----------------------
-
-# Now install prettier from npm
--> because of hum code team me likhenge, ab koi kaisa code likh rha hai koi kaisa, to waha prettier add karna imp hai
-    npm i -D prettier
-
--> install karne ke baad ye 2 files banao
-
-.prettierrc -> sbhi jagah apply karne ke liye 
-.prettierignore -> idhr apply nhi karna vo
-
-------------------------
-
-
-# DB connection karenge ab hum 
-
-.env -> me PORT or variables set karo
-
-fir db ka naam constants file me likhna hai 
-
-------------------------
-
-# db connection mainly 2 tarike se ho sakta hai 
-
-1) sara code index.js me likho -> aur usko execute karwado
-2) db naam ka koi folder banau isme connection jo bhi fuction hai vo likhuaur fir index file mein function ko import karwau aur waha execute karwau
-
-
------------------------
-
-# ab db connection akrte hai 
-
-1) install dotenv, mongoose, and express 
-    npm i mongoose express dotenv
-
-2) point to me notice    
-    -> jab bhi db se baat karo try and catch appoarch jarur lagao with async await
-
-3) ab index.js file me jaakr code likhe hai    
-
--------------------------
- # ab 2nd appoarch
-
- -> bd ke andr -> index.js
- -> dotenv ko require karo
-
-<!--  -->
-
-express me hum:
-ab 2 chijen install kari hai 
-
-1) cookie-parser
-2) cors -> ye hum setting karne deta hai croos origin resorce share ke liye
-----------------
-
-abhi tak bss hmari setting chal rhi hai ki
-kaise kaise data aa sakta hai
-
-
--> middlewares
-
--> nodejs api error
-
-
-------------------------------------------------
-
-
-# user model & video model
-# JWT
-# Decript 
-
-ab models folder ke andr kaam karenge
-
-ab user model me jo video id aagyi vo model ko complex bna deta hai 
-uske liye mongodb querry lagegi originek package ka use karenge
-jo hai : 
-
--> npm i mongoose-aggregate-paginate-v2
-
-
-# bcrypt  -> ye hash password ke liye hai, matlab password jab encrypt honge toh decrypt bhi honge, joki issai hote hai
--> npm i bcrypt
-
-# Jsonwebtoken -> jwt.io
--> npm i jsonwebtoken
-
------
-ab user file me inko export karo jaakr
-
-
------
-ab direct encrypt karna possible hai nhi, to hume help leni padhti hai mongoose ke kuch hooks ki
-middlewares me kuch hooks hai 
--> Pre hook
-
-<!-- ---------------------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------------------- -->
-
-# how to do file upload
-
--> third part servicex 
-like: AWS, AZURE and many more
-
-# hum cloudinary use karenge 
--> npm install cloudinary
-
-# multer
--> npm i multer
-
----> file ko direct cloudinary me store nhi karwa sakte uske liye multer ki zarurat pdegegi
-
-
-# ab multer par kuch steps hai?
-
-1) user se file leta hai -> local storage me temporary store karna
-2) local storage se cloudinary ko file dena
-
-uske baad cloudinary file ko server par daalta hai
-
-
---
-ab hum utils me ek cloudinary naam se ek file bnate hai 
-
--------------------------------------------------------------------------------------------------
-
-HHTP : 
-    -> URL -> universe resorce locator
-    -> URI -> 
-    -> URN
-
-what are HHTP headers?
-    metadata  -->  key-value    sent along with request & response
-
-    -> caching, authentication, manage state
-        X-prefix  ->  2012 (X-deprecated)      
-
-
-* Request headers  -->  from client
-* Response Headers  -->  from server
-* Representation Headers  -->  encoding/ compression
-* Payload Headers  -->  data
-
-
-
-
-# Most common Headers 
-* Accept : application/ json
-* User - Agent
-* Authorization : Beerer
-* Content - Type : images/video
-* Cookie : login vgra
-* Cache - Control : expire
-
-
-# CORS
-* Acces - Control - Allow - Origin
-* Acces - Control - Allow - Credentials
-* Acces - Control - Allow - Method
-
-
-# Security
-* Cross - Origin - Embedders - Policy
-* Cross - Origin - Opener - Policy
-* Content - Security - Policy
-* X - XSS - Protection
-
-<!-- --------------------------------------------------------------- -->
-
-
-## HHTP Methods
-
-Basic set of operations that can be used to interact with server 
-
-* <GET>      :   retrieve a resource 
-* <HEAD>     :   No message body ( Response headers only)
-* <OPTIONS>  :   what operations are available 
-* <TRACE>    :   loopback test ( get some data ) -> proxy
-* <DELETE>   :   remove a resource
-* <PUT>      :   replace a resource
-* <POST>     :   intresct with Response ( mostly add )
-* <PATCH>    :   change part of a resource
-
-
-<!-- ---------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------- -->
-
-
-## HTTP Status Code
-
-* 1 xx      Informational     ->  xx ki jagh koi bhi no. aayega like : 112
-* 2 xx      Success
-* 3 xx      Redirection
-* 4 xx      Client error
-* 5 xx      Server error
-
-------------------------------
-
-
-* 100   ->   Continue
-* 102   ->   Processing
-* 200   ->   Ok
-* 201   ->   Created
-* 202   ->   Accepted
-* 307   ->   temporary redirect 
-* 308   ->   permanent redirect
-* 400   ->   Bad request
-* 401   ->   Unauthoorized
-* 402   ->   Payment reqired
-* 404   ->   Not Found
-* 500   ->   Internal Server error
-* 504   ->   Gateway time Out
-
-<!-- ---------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------- -->
-
-
-
-
-### Ab Controllers par kaam karenge 
-
-<!-- ---------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------- -->
-
-
-
-# register user ke steps
-
-<li> username
-<li> email
-<li> password
-<li> captcha
-
-
-
+<a href="http://example.com" style="background-color: #FF6C37; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 12px;">Run in Postman</a>
 
 
 
