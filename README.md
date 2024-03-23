@@ -72,8 +72,7 @@ The server will start on port 8000 by default, and you can access the API at `ht
 ## API Testing in Postman
 You can test the API endpoints using Postman. The collection for the YouTube-Backend API is available [here]().
 
-<a href="http://example.com" style="background-color: #FF6C37; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 12px;">Run in Postman</a>
-
+<a href="http://example.com" style="background-color: #FF6C37; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 4px;">Run in Postman</a>
 
 
 
