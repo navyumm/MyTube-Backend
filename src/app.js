@@ -4,36 +4,14 @@ import cookieParser from "cookie-parser"
 
 const app = express()
 
-const allowedOrigins = [
-    process.env.CORS_ORIGIN
-];
-console.log("")
-
-const corsOptions = {
-    origin: (origin, callback) => {
-        if (!origin) {
-            return callback(null, true); // Allow requests with no origin (like mobile apps or curl requests)
-        }
-        if (allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS method
-    allowedHeaders: ['Content-Type', 'Authorization'], // Headers that the server allows
+app.use(cors({
+    // origin : process.env.CORS_ORIGIN,
+    origin : [ 
+        "http://localhost:5173",
+        "http://localhost:8080"
+        ],
     credentials: true
-}
-
-
-
-app.use(cors(corsOptions))
-
-
-// app.use(cors({
-//         origin: process.env.CORS_ORIGIN,
-//         credentials: true
-//     }))
+}))
 
 app.use(express.json({ limit: "16kb" }))
 app.use(express.urlencoded({ extended: true, limit: "16kb" }))
@@ -55,7 +33,7 @@ import dashboardRouter from "./routes/dashboard.routes.js"
 //routes declaration
 app.use("/api/v1/healthcheck", healthcheckRouter)
 app.use("/api/v1/users", userRouter)
-app.use("/api/v1/tweets", tweetRouter)
+app.use("/api/v1/tweet", tweetRouter)
 app.use("/api/v1/subscriptions", subscriptionRouter)
 app.use("/api/v1/videos", videoRouter)
 app.use("/api/v1/comments", commentRouter)
