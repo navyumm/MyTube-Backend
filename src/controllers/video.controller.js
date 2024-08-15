@@ -1,5 +1,5 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
-import { ApiError } from "../utils/apiError.js";
+import { ApiError } from "../utils/ApiError.js";
 import { Video } from "../models/video.model.js";
 import { User } from "../models/user.model.js";
 import { Comment } from "../models/comment.model.js";
@@ -312,7 +312,7 @@ const getVideoById = asyncHandler(async (req, res) => {
                     {
                         $project: {
                             username: 1,
-                            "avatar.url": 1,
+                            avatar: 1,
                             subscribersCount: 1,
                             isSubscribed: 1
                         }
@@ -339,7 +339,7 @@ const getVideoById = asyncHandler(async (req, res) => {
         },
         {
             $project: {
-                "videoFile.url": 1,
+                videoFile: 1,
                 title: 1,
                 description: 1,
                 views: 1,
