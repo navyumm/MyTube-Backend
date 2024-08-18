@@ -103,7 +103,7 @@ const getAllVideos = asyncHandler(async (req, res) => {
     const { page = 1, limit = 10, query, sortBy, sortType, userId } = req.query;
 
     // Log the received userId for debugging
-    console.log("Received userId:", userId);
+    // console.log("Received userId:", userId);
 
     // Initialize the aggregation pipeline
     const pipeline = [];
