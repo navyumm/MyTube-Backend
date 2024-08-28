@@ -257,9 +257,9 @@ const getVideoById = asyncHandler(async (req, res) => {
         throw new ApiError(400, "Invalid videoId");
     }
 
-    if (!isValidObjectId(req.user?._id)) {
-        throw new ApiError(400, "Invalid userId");
-    }
+    // if (!isValidObjectId(req.user?._id)) {
+    //     throw new ApiError(400, "Invalid userId");
+    // }
 
     const video = await Video.aggregate([
         {
