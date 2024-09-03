@@ -253,9 +253,9 @@ const getVideoById = asyncHandler(async (req, res) => {
     // let userId = req.body;
 
     // userId = new mongoose.Types.ObjectId(userId)
-    if (!isValidObjectId(videoId)) {
-        throw new ApiError(400, "Invalid videoId");
-    }
+    // if (!isValidObjectId(videoId)) {
+    //     throw new ApiError(400, "Invalid videoId");
+    // }
 
     // if (!isValidObjectId(req.user?._id)) {
     //     throw new ApiError(400, "Invalid userId");
